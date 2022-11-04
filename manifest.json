@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "salty",
+  "version": "1.0.0",
+  "description": "api封装代码自动生成器",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [{
+    "js": [
+      "js/jquery-1.8.3.js",
+      "js/content-script.js"
+    ],
+    "matches": [
+      "https://console-docs.apipost.cn/*",
+      "https://docs.apipost.cn/*"
+    ],
+    "css": [
+      "css/theme.css"
+    ]
+  }]
+}
